@@ -4,39 +4,33 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Arrays;
-
 /**
- * <strong>TAG_INT_ARRAY</strong>
+ * <strong>TAG_INT</strong>
  *
  * @author ifxandy
  */
-public class TagIntArray extends ITag {
+public class TagInt extends ITag {
 
     @Getter
     @Setter(value = AccessLevel.PRIVATE)
-    private int[] value;
+    private int value;
 
-    public TagIntArray(String name, int[] array) {
+    public TagInt(String name, int value) {
 
         super(name);
-        setValue(array);
+        setValue(value);
 
     }
 
     @Override
     public String toString() {
 
-        final StringBuilder integers = new StringBuilder();
-        for (final int b : value) {
-            integers.append(b).append(" ");
-        }
         final String name = getName();
         String append = "";
         if ((name != null) && !name.equals("")) {
             append = "(\"" + getName() + "\")";
         }
-        return "TAG_Int_Array" + append + ": " + integers;
+        return "TAG_Int" + append + ": " + value;
     }
 
     /*
@@ -48,7 +42,7 @@ public class TagIntArray extends ITag {
 
         final int prime = 31;
         int result = super.hashCode();
-        result = (prime * result) + Arrays.hashCode(value);
+        result = (prime * result) + value;
         return result;
     }
 
@@ -61,10 +55,10 @@ public class TagIntArray extends ITag {
 
         if (this == obj) { return true; }
         if (!super.equals(obj)) { return false; }
-        if (!(obj instanceof TagIntArray)) { return false; }
+        if (!(obj instanceof TagInt)) { return false; }
 
-        TagIntArray other = (TagIntArray) obj;
-        return Arrays.equals(getValue(), other.getValue());
+        TagInt other = (TagInt) obj;
+        return getValue() == other.getValue();
 
     }
 

@@ -6,6 +6,8 @@ import lombok.Setter;
 
 /**
  * <strong>TAG_FLOAT</strong>
+ *
+ * @author ifxandy
  */
 public class TagFloat extends ITag {
 
