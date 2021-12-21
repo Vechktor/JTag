@@ -11,6 +11,9 @@ import lombok.Setter;
  */
 public class TagInt extends ITag {
 
+    /**
+     * Value
+     */
     @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private int value;
@@ -30,7 +33,7 @@ public class TagInt extends ITag {
         if ((name != null) && !name.equals("")) {
             append = "(\"" + getName() + "\")";
         }
-        return "TAG_Int" + append + ": " + value;
+        return "TAG_Int" + append + ": " + getValue();
     }
 
     /*
@@ -42,7 +45,7 @@ public class TagInt extends ITag {
 
         final int prime = 31;
         int result = super.hashCode();
-        result = (prime * result) + value;
+        result = (prime * result) + getValue();
         return result;
     }
 

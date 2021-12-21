@@ -38,6 +38,7 @@ public class TagEnd extends ITag {
         if (this == obj) { return true; }
         if (!super.equals(obj)) { return false; }
         return obj instanceof TagEnd;
+
     }
 
 }

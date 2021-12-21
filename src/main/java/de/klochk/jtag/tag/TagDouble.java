@@ -6,6 +6,9 @@ import lombok.Setter;
 
 public class TagDouble extends ITag {
 
+    /**
+     * Value
+     */
     @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private double value;
@@ -25,7 +28,7 @@ public class TagDouble extends ITag {
         if ((name != null) && !name.equals("")) {
             append = "(\"" + getName() + "\")";
         }
-        return "TAG_Double" + append + ": " + value;
+        return "TAG_Double" + append + ": " + getValue();
     }
 
     /*
@@ -38,7 +41,7 @@ public class TagDouble extends ITag {
         final int prime = 31;
         int result = super.hashCode();
         long temp;
-        temp = Double.doubleToLongBits(value);
+        temp = Double.doubleToLongBits(getValue());
         result = (prime * result) + (int) (temp ^ (temp >>> 32));
         return result;
     }
@@ -54,8 +57,8 @@ public class TagDouble extends ITag {
         if (!super.equals(obj)) { return false; }
         if (!(obj instanceof TagDouble)) { return false; }
         TagDouble other = (TagDouble) obj;
-        return Double.doubleToLongBits(value) == Double
-                .doubleToLongBits(other.value);
+        return Double.doubleToLongBits(getValue()) == Double
+                .doubleToLongBits(other.getValue());
     }
 
 }

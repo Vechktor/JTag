@@ -31,14 +31,14 @@ public class TagByteArray extends ITag {
     public String toString() {
 
         final StringBuilder hex = new StringBuilder();
-        for (final byte b : value) {
-            final String hexDigits = Integer.toHexString(b).toUpperCase();
+        for (byte b : getValue()) {
+            String hexDigits = Integer.toHexString(b).toUpperCase();
             if (hexDigits.length() == 1) {
                 hex.append("0");
             }
             hex.append(hexDigits).append(" ");
         }
-        final String name = getName();
+        String name = getName();
         String append = "";
         if ((name != null) && !name.equals("")) {
             append = "(\"" + getName() + "\")";

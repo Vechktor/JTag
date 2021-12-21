@@ -33,7 +33,7 @@ public class TagByte extends ITag {
         if ((name != null) && !name.equals("")) {
             append = "(\"" + getName() + "\")";
         }
-        return "TAG_Byte" + append + ": " + value;
+        return "TAG_Byte" + append + ": " + getValue();
 
     }
 

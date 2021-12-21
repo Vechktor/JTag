@@ -13,6 +13,9 @@ import java.util.Arrays;
  */
 public class TagIntArray extends ITag {
 
+    /**
+     * Value
+     */
     @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private int[] value;
@@ -28,7 +31,7 @@ public class TagIntArray extends ITag {
     public String toString() {
 
         final StringBuilder integers = new StringBuilder();
-        for (final int b : value) {
+        for (final int b : getValue()) {
             integers.append(b).append(" ");
         }
         final String name = getName();
@@ -48,7 +51,7 @@ public class TagIntArray extends ITag {
 
         final int prime = 31;
         int result = super.hashCode();
-        result = (prime * result) + Arrays.hashCode(value);
+        result = (prime * result) + Arrays.hashCode(getValue());
         return result;
     }
 
