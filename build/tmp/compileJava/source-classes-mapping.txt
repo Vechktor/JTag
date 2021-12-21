@@ -1,0 +1,8 @@
+de/klochk/jtag/NBTConst.java
+ de.klochk.jtag.NBTConst
+de/klochk/jtag/tag/TagEnd.java
+ de.klochk.jtag.tag.TagEnd
+de/klochk/jtag/util/NBTUtil.java
+ de.klochk.jtag.util.NBTUtil
+de/klochk/jtag/tag/ITag.java
+ de.klochk.jtag.tag.ITag
