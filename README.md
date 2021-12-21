@@ -14,3 +14,19 @@ JTag is simple API for reading & writing Named Binary Tag (NBT) based on JNBT.
 JTag provides several classes and APIs for that purposes.
 Highly recommended to use [NBTInputStream](https://github.com/Vechktor/JTag/) for reading
 and [NBTOutputStream](https://github.com/Vechktor/JTag/)
+
+```java
+NBTInputStream stream = new NBTInputStream(/** some data here... */);
+/**
+ * read from stream some data
+ */
+stream.close();
+```
+And
+```java
+NBTOutputStream stream = new NBTOutputStream(/** some data here... */);
+/**
+ * write to stream some data
+ */
+stream.close();
+```
