@@ -30,3 +30,51 @@ NBTOutputStream stream = new NBTOutputStream(/** some data here... */);
  */
 stream.close();
 ```
+
+## Tags
+
+Currently, library supports every modern type of tag. Tags implemented
+using type inference and diamond operator. So, you do not need to use
+lot of instances and types!
+
+Simply define tag of Integer type. (Library doesn't support primitives!).
+```java
+// This will create tag with name "my_shiny_tags_name" and value of 10
+ITag<Integer> intTag = new ITag<Integer>("my_shiny_tags_name", 10);
+```
+
+To get preferred supported type of tag, you can use utility & constants.
+This example shows you, how to get Integer type.
+```java
+NBTUtil.getTypeById(NBTConst.getTypeInt());
+```
+
+If needed, you can resolve type of ITag (and other objects) with
+utility named GenericTypeResolver. Example below shows, how to
+use it.
+
+```java
+// Utility name     Method  tag  field    index
+GenericTypeResolver.resolve(tag, "value", 0);
+```
+
+Tag - is your tag object
+Field - is name of field with type, you want to resolve
+Index - is index of type (HashMap<K,V>)
+
+## Contribute
+
+You can contribute this library with pull requests
+and issues.
+
+## Thanks
+
+Thanks to JNBT by Ancient (updates by Morlok8k), Mojang for Minecraft & NBT,
+CircleCI for tests and development, Jitpack.io for flexible repository.
+
+## Building
+
+You can build this using
+```shell
+./gradlew assemble
+```
