@@ -1,24 +1,31 @@
 package de.klochk.jtag.tag;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 /**
  * Represents simple NBT Tag
  *
+ * Patch:
+ * Remove all not-needed classes
+ * and extenders, use type inference
+ * and diamond operator
+ *
  * @author ifxandy
  */
 @RequiredArgsConstructor
-public abstract class ITag {
+public class ITag<T> {
 
     @Getter
     private final String name;
 
     /**
-     * Get Tag value
-     * @return value
+     * Value
      */
-    public abstract Object getValue();
+    @Getter
+    private final T value;
 
     /**
      * @see Object#hashCode()
@@ -44,8 +51,8 @@ public abstract class ITag {
         if (this == object) return true;
 
         ITag other = (ITag) object;
-        if (getName() == null) if (other.getName() != null) return false;
-        else return getName().equals(other.getName());
+        if (getValue() == null) if (other.getValue() != null) return false;
+        else return getValue().equals(other.getValue());
         
         return true;
 
