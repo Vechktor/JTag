@@ -14,7 +14,6 @@ public class TagFloat extends ITag {
     /**
      * Value
      */
-    @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private float value;
 
@@ -24,6 +23,13 @@ public class TagFloat extends ITag {
         setValue(value);
 
     }
+
+    /**
+     * Get value
+     * @return value
+     */
+    @Override
+    public Float getValue() { return value; }
 
     @Override
     public String toString() {

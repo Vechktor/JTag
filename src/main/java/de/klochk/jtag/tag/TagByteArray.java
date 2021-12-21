@@ -1,7 +1,6 @@
 package de.klochk.jtag.tag;
 
 import lombok.AccessLevel;
-import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Arrays;
@@ -16,7 +15,6 @@ public class TagByteArray extends ITag {
     /**
      * Value
      */
-    @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private byte[] value;
 
@@ -26,6 +24,13 @@ public class TagByteArray extends ITag {
         setValue(value);
 
     }
+
+    /**
+     * Get value
+     * @return value
+     */
+    @Override
+    public byte[] getValue() { return value; }
 
     @Override
     public String toString() {

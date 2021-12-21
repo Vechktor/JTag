@@ -9,7 +9,6 @@ public class TagDouble extends ITag {
     /**
      * Value
      */
-    @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private double value;
 
@@ -19,6 +18,13 @@ public class TagDouble extends ITag {
         setValue(value);
 
     }
+
+    /**
+     * Get value
+     * @return value
+     */
+    @Override
+    public Double getValue() { return value; }
 
     @Override
     public String toString() {

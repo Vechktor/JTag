@@ -14,7 +14,6 @@ public class TagInt extends ITag {
     /**
      * Value
      */
-    @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private int value;
 
@@ -24,6 +23,13 @@ public class TagInt extends ITag {
         setValue(value);
 
     }
+
+    /**
+     * Get value
+     * @return value
+     */
+    @Override
+    public Integer getValue() { return value; }
 
     @Override
     public String toString() {
@@ -61,7 +67,7 @@ public class TagInt extends ITag {
         if (!(obj instanceof TagInt)) { return false; }
 
         TagInt other = (TagInt) obj;
-        return getValue() == other.getValue();
+        return getValue().equals(other.getValue());
 
     }
 

@@ -16,7 +16,6 @@ public class TagIntArray extends ITag {
     /**
      * Value
      */
-    @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private int[] value;
 
@@ -26,6 +25,13 @@ public class TagIntArray extends ITag {
         setValue(array);
 
     }
+
+    /**
+     * Get value
+     * @return value
+     */
+    @Override
+    public int[] getValue() { return value; }
 
     @Override
     public String toString() {

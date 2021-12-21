@@ -1,7 +1,6 @@
 package de.klochk.jtag.tag;
 
 import lombok.AccessLevel;
-import lombok.Getter;
 import lombok.Setter;
 
 /**
@@ -14,9 +13,15 @@ public class TagByte extends ITag {
     /**
      * Value
      */
-    @Getter
     @Setter(value = AccessLevel.PRIVATE)
     private byte value;
+
+    /**
+     * Get value
+     * @return value
+     */
+    @Override
+    public Byte getValue() { return value; }
 
     public TagByte(String name, byte value) {
 
@@ -61,7 +66,7 @@ public class TagByte extends ITag {
         if (!super.equals(object)) return false;
 
         TagByte other = (TagByte) object;
-        return getValue() == other.getValue();
+        return getValue().equals(other.getValue());
 
     }
 
