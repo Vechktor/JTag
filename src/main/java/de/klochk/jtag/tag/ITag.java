@@ -18,7 +18,7 @@ public abstract class ITag {
      * Get Tag value
      * @return value
      */
-    public abstract Object getValue();
+    public Object getValue() { return null; }
 
     /**
      * @see Object#hashCode()
