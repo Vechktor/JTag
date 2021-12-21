@@ -49,21 +49,6 @@ This example shows you, how to get Integer type.
 NBTUtil.getTypeById(NBTConst.getTypeInt());
 ```
 
-If needed, you can resolve type of ITag (and other objects) with
-utility named GenericTypeResolver. Example below shows, how to
-use it.
-
-```java
-// Utility name     Method  tag  field    index
-GenericTypeResolver.resolve(tag, "value", 0);
-```
-
-Tag - is your tag object
-
-Field - is name of field with type, you want to resolve
-
-Index - is index of type (HashMap<K,V>)
-
 ## Contribute
 
 You can contribute this library with pull requests

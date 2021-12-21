@@ -1,6 +1,5 @@
 import de.klochk.jtag.NBTConst;
 import de.klochk.jtag.tag.ITag;
-import de.klochk.jtag.util.GenericTypeResolver;
 import de.klochk.jtag.util.NBTUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,17 +10,6 @@ import org.junit.jupiter.api.Test;
  * @author ifxandy
  */
 public class UtilTest {
-
-    @Test
-    @DisplayName("Generic Type Resolver")
-    public void testGenericResolver () throws NoSuchFieldException {
-
-        ITag<Integer> tagInt = new ITag<>("integer", 5);
-
-        assert(GenericTypeResolver.resolve(tagInt,
-                "value", 0).equals(Integer.class));
-
-    }
 
     @Test
     @DisplayName("NBTUtil")

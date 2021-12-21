@@ -48,16 +48,10 @@ public class NBTUtil {
         } else if (cls.getValue() instanceof String) {
             return "TAG_STRING";
 
-        } else if (cls.getValue() instanceof List &&
-                GenericTypeResolver.resolve(cls, "value", 0)
-                        .equals(ITag.class)) {
+        } else if (cls.getValue() instanceof List) {
             return "TAG_LIST";
 
-        } else if (cls.getValue() instanceof HashMap &&
-                GenericTypeResolver.resolve(cls, "value", 0)
-                        .equals(String.class) &&
-                GenericTypeResolver.resolve(cls, "value", 1)
-                        .equals(ITag.class)) {
+        } else if (cls.getValue() instanceof HashMap) {
             return "TAG_COMPOUND";
 
         } else if (cls.getValue() instanceof Integer[]) {
@@ -106,16 +100,10 @@ public class NBTUtil {
         } else if (cls.getValue() instanceof String) {
             return NBTConst.getTypeString();
 
-        } else if (cls.getValue() instanceof List &&
-                    GenericTypeResolver.resolve(cls, "value", 0)
-                    .equals(ITag.class)) {
+        } else if (cls.getValue() instanceof List) {
             return NBTConst.getTypeList();
 
-        } else if (cls.getValue() instanceof HashMap &&
-                    GenericTypeResolver.resolve(cls, "value", 0)
-                    .equals(String.class) &&
-                    GenericTypeResolver.resolve(cls, "value", 1)
-                    .equals(ITag.class)) {
+        } else if (cls.getValue() instanceof HashMap) {
             return NBTConst.getTypeCompound();
 
         } else if (cls.getValue() instanceof Integer[]) {

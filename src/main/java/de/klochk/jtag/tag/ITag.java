@@ -27,6 +27,10 @@ public class ITag<T> {
     @Getter
     private final T value;
 
+    public Class<?> getType () {
+        return value.getClass();
+    }
+
     /**
      * @see Object#hashCode()
      */
