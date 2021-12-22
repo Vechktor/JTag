@@ -13,10 +13,12 @@ JTag is simple API for reading & writing Named Binary Tag (NBT) based on JNBT.
 
 JTag provides several classes and APIs for that purposes.
 Highly recommended to use [NBTInputStream](https://github.com/Vechktor/JTag/) for reading
-and [NBTOutputStream](https://github.com/Vechktor/JTag/)
+and [NBTOutputStream](https://github.com/Vechktor/JTag/) for writing.
+
+You need to specify input stream type (gzip support);
 
 ```java
-NBTInputStream stream = new NBTInputStream(/** some data here... */);
+NBTInputStream stream = new NBTInputStream<DataInputStream>(/** some data here... */);
 /**
  * read from stream some data
  */
@@ -24,7 +26,7 @@ stream.close();
 ```
 And
 ```java
-NBTOutputStream stream = new NBTOutputStream(/** some data here... */);
+NBTOutputStream stream = new NBTOutputStream<DataInputStream>(/** some data here... */);
 /**
  * write to stream some data
  */
@@ -37,7 +39,7 @@ Currently, library supports every modern type of tag. Tags implemented
 using type inference and diamond operator. So, you do not need to use
 lot of instances and types!
 
-Simply define tag of Integer type. (Library doesn't support primitives!).
+Simply define tag of Integer type. (JTag supports primitives only in arrays like int[]!).
 ```java
 // This will create tag with name "my_shiny_tags_name" and value of 10
 ITag<Integer> intTag = new ITag<Integer>("my_shiny_tags_name", 10);

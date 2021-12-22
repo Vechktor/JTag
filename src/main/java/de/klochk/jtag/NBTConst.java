@@ -22,9 +22,12 @@ public class NBTConst {
      * TAG type ids.
      * Edit: Optimize memory allocation
      * using short, not just int
+     *
+     * Patch:
+     * provide public access for switch
      */
     @Getter
-    private static final short typeEnd = 0, typeByte = 1,
+    public static final short typeEnd = 0, typeByte = 1,
                                 typeShort = 2, typeInt = 3,
                                 typeLong = 4, typeFloat = 5,
                                 typeDouble = 6, typeByteArray = 7,

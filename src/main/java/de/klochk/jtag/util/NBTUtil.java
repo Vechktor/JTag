@@ -19,7 +19,7 @@ public class NBTUtil {
      * @param cls - type
      * @return name
      */
-    public static String getTypeName(ITag<?> cls) throws NoSuchFieldException {
+    public static String getTypeName(ITag<?> cls) {
 
         if (cls instanceof TagEnd) {
             return "TAG_END";
@@ -42,7 +42,7 @@ public class NBTUtil {
         } else if (cls.getValue() instanceof Double) {
             return "TAG_DOUBLE";
 
-        } else if (cls.getValue() instanceof Byte[]) {
+        } else if (cls.getValue() instanceof byte[]) {
             return "TAG_BYTE_ARRAY";
 
         } else if (cls.getValue() instanceof String) {
@@ -54,10 +54,10 @@ public class NBTUtil {
         } else if (cls.getValue() instanceof HashMap) {
             return "TAG_COMPOUND";
 
-        } else if (cls.getValue() instanceof Integer[]) {
+        } else if (cls.getValue() instanceof int[]) {
             return "TAG_INT_ARRAY";
 
-        } else if (cls.getValue() instanceof Long[]) {
+        } else if (cls.getValue() instanceof long[]) {
             return "TAG_LONG_ARRAY";
 
         }
@@ -71,7 +71,7 @@ public class NBTUtil {
      * @param cls - type
      * @return id
      */
-    public static int getTypeId(ITag<?> cls) throws NoSuchFieldException {
+    public static int getTypeId(ITag<?> cls) {
 
         if (cls instanceof TagEnd) {
             return NBTConst.getTypeInt();
@@ -94,7 +94,7 @@ public class NBTUtil {
         } else if (cls.getValue() instanceof Double) {
             return NBTConst.getTypeDouble();
 
-        } else if (cls.getValue() instanceof Byte[]) {
+        } else if (cls.getValue() instanceof byte[]) {
             return NBTConst.getTypeByteArray();
 
         } else if (cls.getValue() instanceof String) {
@@ -106,10 +106,10 @@ public class NBTUtil {
         } else if (cls.getValue() instanceof HashMap) {
             return NBTConst.getTypeCompound();
 
-        } else if (cls.getValue() instanceof Integer[]) {
+        } else if (cls.getValue() instanceof int[]) {
             return NBTConst.getTypeIntArray();
 
-        } else if (cls.getValue() instanceof Long[]) {
+        } else if (cls.getValue() instanceof long[]) {
             return NBTConst.getTypeLongArray();
 
         }
@@ -127,12 +127,12 @@ public class NBTUtil {
        if (id == 4) return Long.class;
        if (id == 5) return Float.class;
        if (id == 6) return Double.class;
-       if (id == 7) return Byte[].class;
+       if (id == 7) return byte[].class;
        if (id == 8) return String.class;
        if (id == 9) return List.class;
        if (id == 10) return HashMap.class;
-       if (id == 11) return Integer[].class;
-       if (id == 12) return Long[].class;
+       if (id == 11) return int[].class;
+       if (id == 12) return long[].class;
 
         throw new IllegalArgumentException("Type of given tag does not match anything standard types.");
 
